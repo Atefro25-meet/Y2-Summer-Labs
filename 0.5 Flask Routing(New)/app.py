@@ -4,20 +4,35 @@ app = Flask(__name__)
 
 @app.route('/home')
 def home():
-    return("<html><p>Welcome to our gallary </p> <a href='/fst'> house image: </a></html>")
+    return('''
+        <html><p>Welcome to our gallery </p> <a href='/fst'> food image: </a></html>
+        ''')
 
 @app.route('/fst')
 def fst():
-    return("<html><a href='/sec'> pet image: </a><img src='food.jpeg'></html>")
+    return('''
+        <html>
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMtt3aOrfYZ1KnQq4GK0vf9gkNBC07f72UWQ&s'>
+        <h2><a href="/home">home</a></h2>
+        <h2><a href="/sec">second</a></h2>
+        </html>''')
 
 @app.route('/sec')
 def sec():
-    return("<html><a href='/thrd'>home image:></a><img src='pet.jpeg'></html>")
-
+    return('''
+        <html>
+        <img src='https://images.immediate.co.uk/production/volatile/sites/30/2023/06/Ultraprocessed-food-58d54c3.jpg?quality=90&resize=440,400'>
+        <h2><a href="/first">first</a></h2>
+        <h2><a href="/thrd">third</a></h2>
+        </html>''')
 @app.route('/thrd')
 def thrd():
-    return("<html><a href='/home'>main page:</a><img src='home.jpeg' > </html>")
-
+    return('''
+        <html>
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSudTsDqMa_OimGOwDvB5veN7NQ3lyWuhGSVw&s'>
+        <h2><a href="/sec">second</a></h2>
+        <h2><a href="/home">home</a></h2>
+        </html>''')
     
 if __name__ == '__main__':
-    app.run(debug=True,port = 5050)
+    app.run(debug=True)
