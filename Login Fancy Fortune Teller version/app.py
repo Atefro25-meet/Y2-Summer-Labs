@@ -20,15 +20,15 @@ def login():
                 
 
 
-# Route for the home page
-@app.route('/home',methods=["POST","GET"])
+@app.route('/home', methods=["POST", "GET"])
 def home():
     if request.method == "GET":
-        return render_template("home.html")
+        username = login_session.get("username", "Guest")
+        return render_template("home.html", username=username)
     else:
-        
-
         return redirect(url_for('fortune'))
+
+
  
 @app.route("/fortune")
 def fortune():
