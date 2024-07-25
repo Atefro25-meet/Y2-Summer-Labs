@@ -99,8 +99,7 @@ def home():
 def display():
     login_session.modified=True
     uid=login_session['user']['localId']
-    quotes = db.child("quotes").child(uid).get().val()
-   
+    quotes = db.child("quotes").get().val()
 
     return render_template("display.html",quotes=quotes)
 
