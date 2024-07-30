@@ -1,0 +1,25 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>home</title>
+</head>
+<body>
+
+    <h1>Welcome {{usernames}}</h1>
+    <h1>Here is your balance bro:</h1>
+    <h2>bells buget: {{bells}}</h2>
+    <h2>investing buget: {{inv}}</h2>
+    <h2>spending buget: {{own}}</h2>
+    <a href="/edit">get/spend</a>
+    <br>
+    <a href="/history">history</a>
+
+
+    <form style="text-align: center;"" action="{{url_for('signout')}}"  method="GET">
+        <input type="submit" name="Sign out" value="Sign out">
+    </form>
+
+</body>
+</html>
